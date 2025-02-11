@@ -1,3 +1,10 @@
+article img{ 
+    transition: transform .5s;
+}
+article:hover img{ 
+    transform: scale (2);
+}
+
 .article-text{ 
     position: absolute;
     z-index: 10;
