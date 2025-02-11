@@ -67,6 +67,7 @@ display: block;
 }
 .widget a:nth-last-of-type(even):hover{ 
     transition-delay: -.5s;
+    
 }
 @keyframes colorShiftDeluxe{
 
