@@ -15,7 +15,7 @@ body{
     display: flex;
     gap: 2rem;
     align-items: center;
-    min-width: 80vh;
+    min-height: 80vh;
     background-image: url("./images/banner.webp");
     background-color: hsl(240, 49%, 38%);
     background-blend-mode: multiply;
