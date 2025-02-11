@@ -49,7 +49,10 @@ display: block;
 
 }
 .site-footer a:hover{ 
-    animation: linkEffect .5s;
+    /* name, duration, iteration, end point  */
+    animation: linkEffect .5s 2 forwards;
+    /* we want to stop the animation at the last call and stop at green color */
+    /* number twi will do twice the naiation and stop at the end of the animation */
 }
 @keyframes colorShiftDeluxe{
 
