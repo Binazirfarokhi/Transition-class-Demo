@@ -1,5 +1,7 @@
 article img{ 
-    transition: transform .5s;
+    /* element, duration, delay */
+    transition: transform .5s .25s;
+
 }
 article:hover img{ 
     transform: scale (2);
@@ -14,7 +16,8 @@ article:hover img{
     padding: 1rem;
     background-color: black;
     transform: translateY(-100%);
-    transition: transform .5s;
+      /* element, duration, delay  */
+    transition: transform .5s .25s;
 }
 article:hover .article-text{ 
     transform: translateY(0);
@@ -55,11 +58,15 @@ display: block;
 
 
 }
+
 .site-footer a:hover{ 
     /* name, duration, iteration, end point  */
-    animation: linkEffect .5s 2 forwards;
+    animation: linkEffect .5s 1 forwards;
     /* we want to stop the animation at the last call and stop at green color */
     /* number twi will do twice the naiation and stop at the end of the animation */
+}
+.widget a:nth-last-of-type(even):hover{ 
+    transition-delay: -.5s;
 }
 @keyframes colorShiftDeluxe{
 
