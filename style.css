@@ -4,6 +4,10 @@ body{
     line-height: 1.5;
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 10rem;
+
 
 
 }
@@ -17,6 +21,14 @@ body{
     background-blend-mode: multiply;
     background-size: cover;
     padding: 2rem;
+    mask-image: url(./images/mask-image-curved-bottom.svg);
+    mask-size: cover;
+    /* start from bottom and nail to left of the image */
+    mask-position: bottom left;
+    transition: all 1s;
+    @media screen and (max-width:1000px){
+        background-position: -300px 0;
+    }
 }
 .site-title{ 
     color: #fff7;
@@ -35,6 +47,7 @@ body{
 }
 
 .site-header a{ 
+    text-align: right;
     color: #fff7;
     display: block;
     padding: .25rem;
@@ -50,9 +63,27 @@ body{
     z-index: 10;
 
 }
+/* when we hover a link style the unhoverd links */
 .site-header nav:has(a:hover) a:not(:hover)  {
     opacity: .25; 
 
+}
+.site-main{ 
+    display: grid;
+    gap: 3rem;
+    /* the browser you do the math, make each column at least 300px */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    padding: 0 5%;
+}
+img{ 
+    width: 100%;
+    height: auto;
+    display: block;
+}
+article{ 
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
 }
 
 article img{ 
@@ -67,7 +98,7 @@ article img{
 .article-text{ 
     position: absolute;
     z-index: 10;
-    /* shorthand for top right bottom left  */
+    /* shorthand for truble : top right bottom left   */
     inset : 0 ;
     color: white;
     padding: 1rem;
