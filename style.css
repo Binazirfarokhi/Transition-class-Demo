@@ -11,6 +11,10 @@ body{
 
 
 }
+h1
+{
+    color: wheat;
+}
 .site-header{ 
     display: flex;
     gap: 2rem;
@@ -26,6 +30,9 @@ body{
     /* start from bottom and nail to left of the image */
     mask-position: bottom left;
     transition: all 1s;
+    /* the method followed by second and how many times and go and back to the image */
+    /* name, duration, iteration, iteration-count, direction */
+    animation: colorShiftDelux 10s infinite alternate;
     @media screen and (max-width:1000px){
         background-position: -300px 0;
     }
@@ -105,16 +112,22 @@ article img{
     background-color: black;
     transform: translateY(-100%);
       /* element, duration, delay  */
-    transition: transform .5s .25s;
+    transition: all 1s .25s;
+    
 }
 article:hover .article-text{ 
     transform: translateY(0);
 
 }
+article img{ 
+    transition:transform .5s ;
+
+}
+article:hover img{ 
+    transform: scale(2);
+}
 .site-footer { 
     background-color: black;
-
-
 }
 @media screen and(min-width: 660px) {
     .site-footer { 
@@ -157,7 +170,33 @@ display: block;
     transition-delay: -.5s;
 
 }
+@keyframes colorShift{
+    from{
+background-color:deeppink ;
+    }
+    to{
+        background-color: rgb(118, 146, 75);
+
+    }
+
+}
+
 @keyframes colorShiftDeluxe{
+    0%{
+background-color: #a63232;
+    }
+    25%{
+background-color: #bed168;
+    }
+    50%{
+background-color: #362e94;
+    }
+    75%{
+background-color: #d849bc;
+    }
+    100%{ 
+
+    }
 
 }
 @keyframes linkEffect { 
@@ -172,3 +211,39 @@ display: block;
  }
 
 }
+
+/* footer{ 
+    background-color: black;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 2rem;
+    justify-content: center;
+    text-align: center;
+    padding: 4rem 2%;
+
+
+}
+footer a { 
+    color: whitesmoke;
+    display: block;
+    padding: .25rem;
+
+} */
+ footer a{ 
+    position: relative;
+    width: 0%;
+    z-index: 1;;
+ }
+ footer a::before{
+    content: "";
+    position: absolute;
+    border-bottom: 1px solid white;
+    inset:0;
+    z-index: -1;
+    width: 100%;
+    transition: all .5s;
+  
+ }
+ footer a:hover::before{ 
+    animation: colorShift .5s 2 forwards;
+ }
